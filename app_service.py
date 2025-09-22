@@ -5,7 +5,7 @@ from bson.errors import InvalidId
 
 MONGO_URI = "mongodb+srv://admin:5gdstXZdV8boRX8Y@progeficaz.bjvjo.mongodb.net/" 
 client = MongoClient(MONGO_URI)
-db = filme["filme_db"]  
+db = client["filme_db"]  
 filmes_collection = db["filmes"] 
 
 filmes_collection.create_index("titulo", unique=True)
