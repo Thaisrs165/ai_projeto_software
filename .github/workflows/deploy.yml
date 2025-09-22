@@ -37,7 +37,7 @@ jobs:
           tags: thaisrs3/filmes-ci:${{ github.sha }}
 
       - name: executing remote ssh commands using password
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.HOST_TEST }}
           username: "ubuntu"
