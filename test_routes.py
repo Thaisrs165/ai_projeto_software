@@ -52,7 +52,7 @@ def test_criar_filme_route_missing_field(client):
     assert "descricao" in data["erro"]
 
 
-@patch("app_service.listar_filmes")
+@patch("app.listar_filmes")
 def test_listar_filmes_route(mock_listar, client):
     mock_listar.return_value = [
         {
