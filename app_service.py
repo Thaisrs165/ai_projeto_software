@@ -28,7 +28,7 @@ def criar_objeto_filme(data):
         })
         return {"id": str(result.inserted_id), "titulo": data["titulo"], "descricao": data["descricao"], "duracao": data["duracao"], "diretor": data["diretor"],"dataCadastro": data["dataCadastro"]}
     except DuplicateKeyError: 
-        return None
+        return {"erro": "Titulo já cadastrado"}
 
 def listar_filmes():
     filmes = filmes_collection.find()
@@ -39,7 +39,9 @@ def deletar_filme(filme_id):
     try:
         obj_id = ObjectId(filme_id)  
     except InvalidId:
-        return False 
+        return {"erro": "ID inválido"}
 
     result = filmes_collection.delete_one({"_id": obj_id})
-    return result.deleted_count > 0 
+    if result.deleted_count == 0:
+        return {"erro": "Filme não encontrado"}
+    return True
