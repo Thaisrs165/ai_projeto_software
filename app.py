@@ -15,7 +15,7 @@ def criar_filme():
     filme = criar_objeto_filme(data)
     if not filme:
         return jsonify({"erro": "Filme já cadastrado"}), 400
-    return jsonify(cliente), 201
+    return jsonify(filme), 201
 
 
 @app.route("/filmes", methods=["GET"])
