@@ -25,9 +25,9 @@ def get_filmes():
 @app.route("/filmes/<filme_id>", methods=["DELETE"])
 def delete_filme(filme_id):
     ok = deletar_filme(filme_id)
-    if not ok:
-        return jsonify({"erro": "Filme não encontrado"}), 404
-    return jsonify({"mensagem": "Filme deletado com sucesso"}), 200
+    if result is True:
+        return jsonify({"mensagem": "Filme deletado com sucesso"}), 200
+    return jsonify({"erro": "Filme não encontrado"}), 404
 
 
 if __name__ == "__main__":
