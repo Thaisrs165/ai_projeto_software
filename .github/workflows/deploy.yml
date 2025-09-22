@@ -47,4 +47,4 @@ jobs:
           script: |
             docker stop filmes
             docker rm --force filmes
-            docker run -d -p 5001:5000 --name filmes thaisrs3/filmes-ci:${{ github.sha }} 
+            docker run -d -p 56.124.95.139:5000 --name filmes thaisrs3/filmes-ci:${{ github.sha }} 
