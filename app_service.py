@@ -4,7 +4,7 @@ from pymongo.errors import DuplicateKeyError
 from bson.errors import InvalidId
 
 MONGO_URI = "mongodb+srv://admin:5gdstXZdV8boRX8Y@progeficaz.bjvjo.mongodb.net/" 
-filme = MongoClient(MONGO_URI)
+client = MongoClient(MONGO_URI)
 db = filme["filme_db"]  
 filmes_collection = db["filmes"] 
 
