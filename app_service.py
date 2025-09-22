@@ -32,7 +32,7 @@ def criar_objeto_filme(data):
 
 def listar_filmes():
     filmes = filmes_collection.find()
-    return [{"id": str(c["_id"]), "titulo": f["titulo"], "descricao": f["descricao"], "duracao": f["duracao"], "diretor": f["diretor"], "dataCadastro": f["dataCadastro"]} for f in filmes]
+    return [{"id": str(f["_id"]), "titulo": f["titulo"], "descricao": f["descricao"], "duracao": f["duracao"], "diretor": f["diretor"], "dataCadastro": f["dataCadastro"]} for f in filmes]
 
 
 def deletar_filme(filme_id):
